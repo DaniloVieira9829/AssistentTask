@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Gerenciador de Tarefas IA</h1>
+            <div class="user-info">
+                <span>Olá, Usuário!</span>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#tasks" class="active">📋 Minhas Tarefas</a></li>
+                <li><a href="#ai-chat">🤖 Chat com IA</a></li>
+                <li><a href="#suggestions">💡 Sugestões IA</a></li>
+                <li><a href="#stats">📊 Estatísticas</a></li>
+                <li><a href="#settings">⚙️ Configurações</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <!-- Seção de Tarefas -->
+            <section id="tasks" class="section active">
+                <div class="task-header">
+                    <h2>Minhas Tarefas</h2>
+                    <button class="btn-primary" onclick="openTaskModal()">+ Nova Tarefa</button>
+                </div>
+                
+                <div class="task-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="pending">Pendentes</button>
+                    <button class="filter-btn" data-filter="completed">Concluídas</button>
+                    <button class="filter-btn" data-filter="high">Alta Prioridade</button>
+                </div>
+
+                <div id="task-list" class="task-list">
+                    <!-- Tarefas serão carregadas aqui -->
+                </div>
+            </section>
+
+            <!-- Seção de Chat com IA -->
+            <section id="ai-chat" class="section">
+                <div class="chat-header">
+                    <h2>Assistente IA</h2>
+                    <span class="ai-status">🟢 Online</span>
+                </div>
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-message">
+                        <strong>Assistente IA:</strong> Olá! Como posso ajudar você com suas tarefas hoje?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </section>
+
+            <!-- Modal para Nova Tarefa -->
+            <div id="task-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeTaskModal()">&times;</span>
+                    <h3>Nova Tarefa</h3>
+                    <form id="task-form">
+                        <input type="text" id="task-title" placeholder="Título da tarefa" required>
+                        <textarea id="task-description" placeholder="Descrição"></textarea>
+                        <select id="task-priority">
+                            <option value="low">Baixa Prioridade</option>
+                            <option value="medium">Média Prioridade</option>
+                            <option value="high">Alta Prioridade</option>
+                        </select>
+                        <input type="date" id="task-deadline">
+                        <button type="submit">Adicionar Tarefa</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Danilo Vieira - 
+            <a href="https://github.com/DaniloVieira9829" target="_blank">GitHub</a> | 
+            <a href="mailto:vieiradanilo272@gmail.com">Suporte</a> |
+            <a href="#" onclick="showTerms()">Termos de Uso</a>
+        </p>
+    </footer>
+
+    <script src="js/taskManager.js"></script>
+    <script src="js/aiAssistant.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
